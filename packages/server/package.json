@@ -8,7 +8,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "lint": "eslint --fix",
+    "lint": "eslint src/**/* --fix",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -26,8 +26,9 @@
     "typescript": "^3.8.3"
   },
   "lint-staged": {
-    "src/**/*.js*": [
-      "yarn lint"
+    "src/**/*.{js,ts,tsx}": [
+      "yarn lint",
+      "git add"
     ]
   },
   "publishConfig": {

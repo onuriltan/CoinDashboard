@@ -1,74 +1,23 @@
 module.exports = {
-  "plugins": ["prettier", "@typescript-eslint"],
-  "extends": ["airbnb-typescript", "react-app", "prettier"],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-  "project": "./tsconfig.json"
-},
-  "settings": {
-  "import/resolver": {
-    "typescript": {
-      "alwaysTryTypes": true
+  parser: "@typescript-eslint/parser", // Specifies the ESLint parser
+  parserOptions: {
+    ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
+    sourceType: "module", // Allows for the use of imports
+    ecmaFeatures: {
+      jsx: true // Allows for the parsing of JSX
     }
-  }
-},
-  "rules": {
-  "object-curly-spacing": ["warn", "always"],
-    "no-unused-vars": [
-    "warn",
-    {
-      "vars": "all",
-      "args": "none"
+  },
+  settings: {
+    react: {
+      version: "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
     }
+  },
+  extends: [
+    "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
+    "plugin:@typescript-eslint/recommended" // Uses the recommended rules from @typescript-eslint/eslint-plugin
   ],
-    "@typescript-eslint/no-unused-vars": [
-    "warn",
-    {
-      "vars": "all",
-      "args": "none"
-    }
-  ],
-    "@typescript-eslint/no-explicit-any": [
-    "error",
-    {
-      "ignoreRestArgs": true
-    }
-  ],
-    "max-len": [
-    "warn",
-    {
-      "code": 120,
-      "ignoreStrings": true,
-      "ignoreTemplateLiterals": true,
-      "ignoreComments": true
-    }
-  ],
-    "no-plusplus": [
-    "error",
-    {
-      "allowForLoopAfterthoughts": true
-    }
-  ],
-    "react/jsx-key": "error",
-    "import/no-extraneous-dependencies": [
-    "error",
-    {
-      "devDependencies": [
-        "**/*.test.js",
-        "**/*.test.jsx",
-        "**/*.test.ts",
-        "**/*.test.tsx",
-        "src/tests/**/*"
-      ]
-    }
-  ],
-    "react/jsx-props-no-spreading": "off",
-    "import/prefer-default-export": "off",
-    "react/jsx-boolean-value": "off",
-    "react/prop-types": "off",
-    "react/no-unescaped-entities": "off",
-    "react/jsx-one-expression-per-line": "off",
-    "react/jsx-wrap-multilines": "off",
-    "react/destructuring-assignment": "off"
-}
+  rules: {
+    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
+    // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+  },
 };
