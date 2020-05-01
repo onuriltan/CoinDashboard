@@ -1,0 +1,12 @@
+# Possibe General Folders and Files
+.idea/
+.vscode/
+.DS_Store
+node_modules/
+build/
+coverage/
+
+# Package Manager Files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
