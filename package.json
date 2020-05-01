@@ -6,11 +6,15 @@
   ],
   "devDependencies": {
     "husky": "^4.2.5",
-    "lerna": "^3.20.2"
+    "lerna": "^3.20.2",
+    "lint-staged": "^10.2.2"
+  },
+  "scripts": {
+    "precommit": "lint-staged"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lerna run --concurrency 1 --stream precommit"
+      "pre-commit": "yarn lerna run --concurrency 1 --stream lint"
     }
   }
 }

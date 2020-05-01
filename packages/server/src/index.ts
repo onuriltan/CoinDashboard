@@ -9,6 +9,8 @@ const typeDefs = gql`
     }
 `;
 
+const asdf = 1
+
 const books = [
   {
     title: 'Harry Potter and the Chamber of Secrets',

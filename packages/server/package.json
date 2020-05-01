@@ -20,16 +20,9 @@
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     "eslint": "^6.8.0",
-    "lint-staged": "^10.2.2",
     "nodemon": "^2.0.3",
     "ts-node": "^8.9.1",
     "typescript": "^3.8.3"
-  },
-  "lint-staged": {
-    "src/**/*.{js,ts,tsx}": [
-      "yarn lint",
-      "git add"
-    ]
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.com/"
