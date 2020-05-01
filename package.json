@@ -5,16 +5,14 @@
     "packages/*"
   ],
   "devDependencies": {
+    "eslint": "^6.8.0",
     "husky": "^4.2.5",
     "lerna": "^3.20.2",
-    "lint-staged": "^10.2.2"
-  },
-  "scripts": {
-    "precommit": "lint-staged"
+    "typescript": "^3.8.3"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lerna run --concurrency 1 --stream lint"
+      "pre-commit": "lerna run --concurrency 1 --stream lint"
     }
   }
 }
