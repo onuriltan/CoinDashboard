@@ -8,10 +8,10 @@ node_modules/
 .pnp.js
 
 # Testing
-/coverage
+coverage/
 
 # Production
-/build
+build/
 
 # Misc
 .DS_Store

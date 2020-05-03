@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "nodemon src/index.ts",
     "lint": "eslint src/**/* --fix",
-    "test": "jest src/",
+    "test:ci": "jest src/ --coverage",
     "test:watch": "jest src/ --watch"
   },
   "dependencies": {
