@@ -25,6 +25,12 @@ jobs:
                 command: yarn lerna run test:ci
                 environment:
                   NODE_ENV: development
+            - codecov/upload:
+                file: packages/server/coverage/*.json
+                flags: server
+            - codecov/upload:
+                file: packages/client/coverage/*.json
+                flags: client
 workflows:
   lint-test-and-build:
     jobs:
