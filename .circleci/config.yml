@@ -11,7 +11,7 @@ jobs:
           steps:
             - run:
                 name: Install All Dependencies for Unit Testing
-                command: yarn install
+                command: yarn install --production=false
                 environment:
                   NODE_ENV: test
             - run:
@@ -25,6 +25,6 @@ jobs:
                 environment:
                   NODE_ENV: test
 workflows:
-    lint-test-and-build:
-      jobs:
-        - lint-and-test
+  lint-test-and-build:
+    jobs:
+      - lint-and-test
