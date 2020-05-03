@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   node: circleci/node@1.1.6
-  codecov: codecov/codecov@1.0.5
 jobs:
   lint-and-test:
     executor:
@@ -25,12 +24,6 @@ jobs:
               command: yarn lerna run test-ci
               environment:
                 NODE_ENV: development
-          - codecov/upload:
-              file: packages/server/coverage/*.json
-              flags: server
-          - codecov/upload:
-              file: packages/client/coverage/*.json
-              flags: client
 workflows:
   lint-test-and-build:
     jobs:
