@@ -11,17 +11,17 @@ jobs:
           steps:
             - run:
                 name: Install All Dependencies for Unit Testing
-                command: yarn install --production=false
+                command: NODE_ENV=development yarn install --production=false
                 environment:
                   NODE_ENV: test
             - run:
                 name: Lint All the Packages
-                command: lerna run -concurrency 1 --stream lint
+                command: NODE_ENV=development yarn lerna run -concurrency 1 --stream lint
                 environment:
                   NODE_ENV: test
             - run:
                 name: Test All the Packages
-                command: lerna run -concurrency 1 --stream lint
+                command: NODE_ENV=development yarn lerna run -concurrency 1 --stream lint
                 environment:
                   NODE_ENV: test
 workflows:
