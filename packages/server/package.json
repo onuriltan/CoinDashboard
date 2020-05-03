@@ -8,8 +8,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "nodemon src/index.ts",
-    "lint": "eslint src/**/* --fix",
-    "precommit": "lint-staged"
+    "lint": "eslint src/**/* --fix"
   },
   "dependencies": {
     "apollo-server": "^2.12.0"
