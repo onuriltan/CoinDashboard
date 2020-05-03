@@ -9,9 +9,21 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: export NODE_ENV=test yarn install
-            - run: lerna run -concurrency 1 --stream lint
-            - run: lerna run -concurrency 1 --stream test
+            - run:
+                name: Install All Dependencies for Unit Testing
+                command: yarn install
+                environment:
+                  NODE_ENV: test
+            - run:
+                name: Lint All the Packages
+                  command: lerna run -concurrency 1 --stream lint
+                  environment:
+                    NODE_ENV: test
+            - run:
+                name: Test All the Packages
+                  command: lerna run -concurrency 1 --stream lint
+                  environment:
+                    NODE_ENV: test
 workflows:
     test:
       jobs:
