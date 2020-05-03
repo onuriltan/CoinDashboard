@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
-  test:
+  lint-and-test:
     executor:
       name: node/default
     steps:
@@ -16,15 +16,15 @@ jobs:
                   NODE_ENV: test
             - run:
                 name: Lint All the Packages
-                  command: lerna run -concurrency 1 --stream lint
-                  environment:
-                    NODE_ENV: test
+                command: lerna run -concurrency 1 --stream lint
+                environment:
+                  NODE_ENV: test
             - run:
                 name: Test All the Packages
-                  command: lerna run -concurrency 1 --stream lint
-                  environment:
-                    NODE_ENV: test
+                command: lerna run -concurrency 1 --stream lint
+                environment:
+                  NODE_ENV: test
 workflows:
-    test:
+    lint-test-and-build:
       jobs:
-        - test
+        - lint-and-test
