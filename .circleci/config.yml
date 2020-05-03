@@ -10,8 +10,8 @@ jobs:
       - node/with-cache:
           steps:
             - run: yarn install
-            - run: lerna run -concurrency 1 --stream lint
-            - rum: lerna run -concurrency 1 --stream test
+            - run: lerna run --concurrency 1 --stream lint
+            - rum: lerna run --concurrency 1 --stream test
 workflows:
     build-and-test:
       jobs:
