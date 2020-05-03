@@ -9,8 +9,6 @@ const typeDefs = gql`
     }
 `;
 
-const asdf = 1
-
 const books = [
   {
     title: 'Harry Potter and the Chamber of Secrets',
@@ -30,6 +28,7 @@ const resolvers = {
 
 const server = new ApolloServer({ typeDefs, resolvers });
 server.listen().then(({ url }) => {
+  // eslint-disable-next-line no-console
   console.log(`🚀  Server ready at ${url}`);
 });
 
