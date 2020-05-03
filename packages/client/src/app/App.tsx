@@ -12,7 +12,7 @@ interface Book {
     author: string;
 }
 
-const BOOKS = gql`
+export const BOOKS = gql`
   {
     books {
       title
@@ -21,7 +21,7 @@ const BOOKS = gql`
   }
 `
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   const { loading, error, data } = useQuery<BooksList>(BOOKS)
 
   if (loading) return <p>Loading...</p>
@@ -29,7 +29,7 @@ const App: React.FC = () => {
   if (data && data.books) {
     return (<div>
       {data.books.map(({ title, author }) => (
-        <div key={title}>
+        <div key={title} data-testid={`${title}: ${author}`}>
           <p>
             {title}: {author}
           </p>
@@ -39,5 +39,3 @@ const App: React.FC = () => {
   }
   return <p>Error :(</p>
 }
-
-export default App
