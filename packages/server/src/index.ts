@@ -1,5 +1,6 @@
 import { ApolloServer, gql } from 'apollo-server'
-const typeDefs = gql`    
+
+const typeDefs = gql`
     type Book {
         title: String
         author: String
@@ -7,28 +8,32 @@ const typeDefs = gql`
     type Query {
       books: [Book]
     }
-`;
+`
 
-const books = [
+interface Book {
+  title: string;
+  author: string;
+}
+
+const books: Book[] = [
   {
     title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling',
+    author: 'J.K. Rowling'
   },
   {
     title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-];
+    author: 'Michael Crichton'
+  }
+]
 
 const resolvers = {
   Query: {
-    books: () => books,
-  },
-};
+    books: (): Book[] => books
+  }
+}
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ typeDefs, resolvers })
 server.listen().then(({ url }) => {
   // eslint-disable-next-line no-console
-  console.log(`🚀  Server ready at ${url}`);
-});
-
+  console.log(`🚀  Server ready at ${url}`)
+})
