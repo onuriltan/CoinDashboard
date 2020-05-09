@@ -10,7 +10,7 @@
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test:ci": "CI=true react-scripts test --coverage",
-    "test:watch": "react-scripts test",
+    "test:watch": "react-scripts test --coverage",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --fix"
   },
   "dependencies": {
