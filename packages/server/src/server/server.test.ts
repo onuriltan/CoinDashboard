@@ -21,6 +21,7 @@ describe('server', () => {
   it('should call ApolloServer.listen() and console.log(Server is 🚀 at )', async () => {
     // Arrange
     const listen = ApolloServer.prototype.listen = jest.fn().mockResolvedValue({ url: 'http://localhost:4000' })
+    // eslint-disable-next-line no-console
     const log = console.log = jest.fn()
 
     // Act
@@ -41,6 +42,6 @@ describe('server', () => {
     const server = new Server()
 
     // Assert
-    await expect(server.start()).rejects.toEqual(new Error('Server failed to listen'))
+    await expect(server.start()).rejects.toThrow(new Error('Server failed to listen'))
   })
 })
