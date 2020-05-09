@@ -4,6 +4,7 @@ import { resolvers } from '../graphql/resolvers'
 
 export class Server {
   public server: ApolloServer;
+
   constructor () {
     this.server = new ApolloServer({ typeDefs, resolvers })
   }
