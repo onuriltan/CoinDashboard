@@ -31,6 +31,16 @@
     "jest": "24.9.0",
     "waait": "^1.0.5"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/index.tsx",
+      "!<rootDir>/src/serviceWorker.ts",
+      "!<rootDir>/src/react-app-env.d.ts",
+      "!<rootDir>/src/setupTests.ts"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
