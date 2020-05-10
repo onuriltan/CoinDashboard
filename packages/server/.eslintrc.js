@@ -10,16 +10,18 @@ module.exports = {
   },
   plugins: [
     "@typescript-eslint",
-    "jest"
+    "jest",
+    "promise"
   ],
   extends: [
     "eslint:recommended",
     "standard",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:promise/recommended"
   ],
   rules: {
-    "no-console": 2,
     "@typescript-eslint/explicit-function-return-type": 1,
+    "promise/catch-or-return": "error",
   }
 };

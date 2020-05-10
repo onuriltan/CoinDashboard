@@ -1,12 +1,12 @@
 import { ApolloServer } from 'apollo-server'
-import { typeDefs } from '../graphql/typeDefs'
+import { schema } from '../graphql/schema'
 import { resolvers } from '../graphql/resolvers'
 
 export class Server {
   public server: ApolloServer;
 
   constructor () {
-    this.server = new ApolloServer({ typeDefs, resolvers })
+    this.server = new ApolloServer({ typeDefs: schema, resolvers })
   }
 
   public start = async (): Promise<void> => {

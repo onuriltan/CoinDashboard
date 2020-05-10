@@ -1,0 +1,3 @@
+build/*
+public/*
+src/graphql/types.ts

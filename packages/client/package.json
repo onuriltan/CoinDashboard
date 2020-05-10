@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Coin Dashboard Client",
   "author": "onuriltan <onur.iltan@gmail.com>",
-  "homepage": "https://github.com/onuriltan/CoinDashboard#readme",
   "license": "MIT",
   "main": "src/index.tsx",
   "scripts": {

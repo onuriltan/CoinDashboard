@@ -15,11 +15,12 @@ module.exports = {
       version: "detect"
     }
   },
-  plugins: ["jest"],
+  plugins: ["jest", "promise"],
   extends: [
     "standard",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:promise/recommended"
   ],
   rules: {
     "no-console": 2,
