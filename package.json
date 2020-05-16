@@ -28,7 +28,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lerna run --concurrency 1 --stream lint --no-error-on-unmatched-pattern && lerna run --concurrency 1 --stream test"
+      "pre-commit": "lerna run --concurrency 1 --stream lint --no-error-on-unmatched-pattern --no-verify&& lerna run --concurrency 1 --stream test"
     }
   }
 }
