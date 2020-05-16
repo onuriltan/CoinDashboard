@@ -1,6 +1,7 @@
 coverage:
   status:
     project:
+      default: false
       server:
         target: 80%
         flags:
