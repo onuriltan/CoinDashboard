@@ -1,8 +1,8 @@
 import axios from 'axios'
-import { BLOCKCHAIN_API_URL } from '../../config/dotenv'
+import { BLOCKCHAIN_API_URL } from '../../config/dotenv/dotenv'
 import { Fiat } from '../../graphql/types'
 
-interface Response {
+export interface Response {
   status: string;
   name: string;
   unit: Fiat;
@@ -11,7 +11,7 @@ interface Response {
   values: Values[];
 }
 
-interface Values {
+export interface Values {
   x: number; y: number;
 }
 
