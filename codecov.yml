@@ -1,13 +1,27 @@
 coverage:
   status:
-    patch: off
-    project:
+    project: off
+    patch:
       default:
-        # basic
         target: 80%
         threshold: 0%
         base: auto
-       # advanced
         if_not_found: success
         if_ci_failed: error
         only_pulls: true
+    server:
+      target: 80%
+      flags:
+        - server
+    client:
+      target: 80%
+      flags:
+        - client
+
+flags:
+  server:
+    paths:
+      - packages/server
+  client:
+    paths:
+      - packages/client
