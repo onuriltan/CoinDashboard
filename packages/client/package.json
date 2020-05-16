@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Coin Dashboard Client",
   "author": "onuriltan <onur.iltan@gmail.com>",
-  "homepage": "https://github.com/onuriltan/CoinDashboard#readme",
   "license": "MIT",
   "main": "src/index.tsx",
   "scripts": {
@@ -11,7 +10,7 @@
     "build": "react-scripts build",
     "test:ci": "CI=true react-scripts test --coverage",
     "test:watch": "react-scripts test --coverage",
-    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix"
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --no-error-on-unmatched-pattern --fix"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",

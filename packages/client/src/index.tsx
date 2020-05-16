@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from '@apollo/react-hooks'
 import * as serviceWorker from './serviceWorker'
-import App from './app/App'
+import { App } from './app/App'
 import './index.css'
 
 const client = new ApolloClient({

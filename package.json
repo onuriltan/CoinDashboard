@@ -8,6 +8,9 @@
     "graphql": "^15.0.0"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.13.5",
+    "@graphql-codegen/typescript": "^1.13.5",
+    "@graphql-codegen/typescript-operations": "^1.13.5",
     "@types/jest": "^24.0.0",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
@@ -25,7 +28,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lerna run --concurrency 1 --stream lint && lerna run --concurrency 1 --stream test"
+      "pre-commit": "lerna run --concurrency 1 --stream lint --no-error-on-unmatched-pattern && lerna run --concurrency 1 --stream test"
     }
   }
 }

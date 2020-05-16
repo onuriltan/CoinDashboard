@@ -1,11 +1,12 @@
 coverage:
   status:
+    patch: off
     project:
       default:
         # basic
-        target: 90%
+        target: 80%
         threshold: 0%
-        base: auto 
+        base: auto
        # advanced
         if_not_found: success
         if_ci_failed: error

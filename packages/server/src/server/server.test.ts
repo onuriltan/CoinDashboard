@@ -1,6 +1,6 @@
 import { Server } from './server'
 import { ApolloServer } from 'apollo-server'
-import { typeDefs } from '../graphql/typeDefs'
+import { schema } from '../graphql/schema'
 import { resolvers } from '../graphql/resolvers'
 
 jest.mock('apollo-server')
@@ -10,12 +10,12 @@ describe('server', () => {
     jest.clearAllMocks()
   })
 
-  it('should create server with typeDefs and resolvers', () => {
+  it('should create server with schema and resolvers', () => {
     // Arrange & Act
     const server = new Server()
 
     // Assert
-    expect(ApolloServer).toHaveBeenCalledWith({ typeDefs, resolvers })
+    expect(ApolloServer).toHaveBeenCalledWith({ schema, resolvers })
   })
 
   it('should call ApolloServer.listen() and console.log(Server is 🚀 at )', async () => {
