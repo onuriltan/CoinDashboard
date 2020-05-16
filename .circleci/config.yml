@@ -26,11 +26,9 @@ jobs:
                 environment:
                   NODE_ENV: development
             - codecov/upload:
-                name: Upload test coverage report for server
                 file: packages/server/coverage/*.json
                 flags: server
             - codecov/upload:
-                name: Upload test coverage report for client
                 file: packages/client/coverage/*.json
                 flags: client
 workflows:
