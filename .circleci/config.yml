@@ -3,7 +3,7 @@ orbs:
   node: circleci/node@1.1.6
   codecov: codecov/codecov@1.0.5
 jobs:
-  lint-test-and-codecov:
+  lint-test-codecov:
     executor:
       name: node/default
     steps:
@@ -26,12 +26,14 @@ jobs:
                 environment:
                   NODE_ENV: development
             - codecov/upload:
+                name: Upload test coverage report for server
                 file: packages/server/coverage/*.json
                 flags: server
             - codecov/upload:
+                name: Upload test coverage report for client
                 file: packages/client/coverage/*.json
                 flags: client
 workflows:
-  lint-test-and-codecov:
+  lint-test-codecov:
     jobs:
-      - lint-test-and-codecov
+      - lint-test-codecov
