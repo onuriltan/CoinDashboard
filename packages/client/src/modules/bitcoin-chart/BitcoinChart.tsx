@@ -4,7 +4,7 @@ import * as am4core from '@amcharts/amcharts4/core'
 import './BitcoinChart.scss'
 import { XYChart } from '@amcharts/amcharts4/charts'
 
-const BitcoinChart = () => {
+export const BitcoinChart = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [chart, setChart] = useState<XYChart>()
 
@@ -638,5 +638,3 @@ const BitcoinChart = () => {
     </div>
   )
 }
-
-export default BitcoinChart

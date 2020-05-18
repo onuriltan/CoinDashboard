@@ -2,7 +2,7 @@ import React from 'react'
 import { render, cleanup } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
 import * as am4core from '@amcharts/amcharts4/core'
-import BitcoinChart from './BitcoinChart'
+import { BitcoinChart } from './BitcoinChart'
 import { mockChartObject } from '../../config/test/GlobalMocks'
 
 jest.mock('@amcharts/amcharts4/core')

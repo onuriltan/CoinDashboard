@@ -1,4 +1,4 @@
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const bulletHover: any = {
   properties: {
     scale: 0

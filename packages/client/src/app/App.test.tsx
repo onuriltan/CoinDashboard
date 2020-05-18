@@ -8,8 +8,8 @@ jest.mock('@amcharts/amcharts4/charts')
 jest.mock('../modules/bitcoin-chart/BitcoinChart', () => {
   return {
     __esModule: true,
-    A: true,
-    default: () => {
+    // eslint-disable-next-line react/display-name
+    BitcoinChart: () => {
       return <div/>
     }
   }
