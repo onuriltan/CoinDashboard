@@ -12,7 +12,7 @@ export interface Response {
 }
 
 export interface Values {
-  data: Date; value: number;
+  date: Date; value: number;
 }
 
 export const marketPriceChart = async (timeSpan: string): Promise<Response> => {

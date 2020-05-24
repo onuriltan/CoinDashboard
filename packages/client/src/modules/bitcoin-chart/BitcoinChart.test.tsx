@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, cleanup } from '@testing-library/react'
+import { render, cleanup, wait } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
 import * as am4core from '@amcharts/amcharts4/core'
 import { BitcoinChart } from './BitcoinChart'
@@ -20,5 +20,6 @@ describe('<BitcoinChart />', function () {
   it('should render without crashing', async () => {
     jest.spyOn(am4core, 'create').mockImplementation(() => mockChartObject)
     render(wrappedComponent())
+    await wait() // wait for mock graphQL response
   })
 })

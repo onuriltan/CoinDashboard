@@ -2,12 +2,15 @@ import { Server } from './server'
 import { ApolloServer } from 'apollo-server'
 import { schema } from '../graphql/schema'
 import { resolvers } from '../graphql/resolvers'
+import * as dotEnvConfig from '../config/dotenv/dotenv'
 
 jest.mock('apollo-server')
+jest.mock('../config/dotenv/dotenv')
 
 describe('server', () => {
   beforeEach(() => {
     jest.clearAllMocks()
+    jest.spyOn(dotEnvConfig, 'configureDotEnv')
   })
 
   it('should create server with schema and resolvers', () => {
@@ -31,7 +34,7 @@ describe('server', () => {
     // Assert
     expect(listen).toHaveBeenCalledTimes(1)
     expect(log).toHaveBeenCalledTimes(1)
-    expect(log).toHaveBeenCalledWith('Server is 🚀 at http://localhost:4000')
+    expect(log).toHaveBeenCalledWith('Apollo Server is running at http://localhost:4000')
   })
 
   it('should throw error if ApolloServer.listen promise fails', async () => {
