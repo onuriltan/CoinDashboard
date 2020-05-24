@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "yarn graphql-codegen && yarn build:live",
     "build": "tsc -p .",
-    "build:live": "nodemon --watch 'src' --exec 'ts-node' --ext 'ts' ./src/index.ts",
+    "build:live": "NODE_ENV=development nodemon --watch 'src' --exec 'ts-node' --ext 'ts' ./src/index.ts",
     "lint": "eslint src/**/* --no-error-on-unmatched-pattern --fix ",
     "test:ci": "jest src/ --coverage",
     "test:watch": "jest src/ --watch --coverage"

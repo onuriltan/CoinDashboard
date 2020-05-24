@@ -3,16 +3,16 @@ coverage:
     project:
       default: false
       server:
-        target: 80%
+        target: 50%
         flags:
           - server
       client:
-        target: 80%
+        target: 50%
         flags:
           - client
     patch:
       default:
-        target: 80%
+        target: 50%
         threshold: 0%
         base: auto
         if_not_found: success

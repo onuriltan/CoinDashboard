@@ -6,7 +6,9 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
+  Date: any;
 };
+
 
 export enum Fiat {
   Usd = 'USD',
@@ -15,8 +17,8 @@ export enum Fiat {
 
 export type CoinValues = {
    __typename?: 'CoinValues';
-  x?: Maybe<Scalars['Float']>;
-  y?: Maybe<Scalars['Float']>;
+  date?: Maybe<Scalars['Date']>;
+  value?: Maybe<Scalars['Float']>;
 };
 
 export type History = {
