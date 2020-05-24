@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { BLOCKCHAIN_API_URL } from '../../config/dotenv/dotenv'
 import { Fiat } from '../../graphql/types'
+import moment from 'moment'
 
 export interface Response {
   status: string;
@@ -12,11 +12,11 @@ export interface Response {
 }
 
 export interface Values {
-  x: number; y: number;
+  date: Date; value: number;
 }
 
 export const marketPriceChart = async (timeSpan: string): Promise<Response> => {
-  const historyURL = `${BLOCKCHAIN_API_URL}/charts/market-price`
+  const historyURL = `${process.env.BLOCKCHAIN_API_URL}/charts/market-price`
   try {
     const response = await axios({
       url: historyURL,
@@ -32,8 +32,23 @@ export const marketPriceChart = async (timeSpan: string): Promise<Response> => {
         format: 'json'
       }
     })
-    return response.data
+    if (response.status === 200) {
+      // eslint-disable-next-line @typescript-eslint/no-use-before-define
+      return modifyResponse(response.data)
+    } else {
+      throw new Error('Cannot get chart data')
+    }
   } catch (e) {
     throw new Error(e)
   }
+}
+
+const modifyResponse = (responseData: any) => {
+  responseData.values = responseData.values.map((value: any) => {
+    return {
+      date: new Date(moment.unix(value.x).format('YYYY-MM-DD')),
+      value: value.y
+    }
+  })
+  return responseData
 }

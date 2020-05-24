@@ -1,13 +1,14 @@
 import { gql } from 'apollo-server'
 
 export const schema = gql`
+  scalar Date
   enum Fiat {
     USD,
     EUR
   }
   type CoinValues {
-    x: Float,
-    y: Float
+    date: Date,
+    value: Float
   }
   type History {
     fiat: Fiat!,

@@ -1,7 +1,7 @@
-import * as dotenv from 'dotenv'
+import { config } from 'dotenv'
 
-export const dotEnvConfig = (): void => {
-  dotenv.config()
+export const configureDotEnv = (): void => {
+  config()
   let path
   switch (process.env.NODE_ENV) {
     case 'test':
@@ -10,10 +10,13 @@ export const dotEnvConfig = (): void => {
     case 'production':
       path = `${__dirname}/.env.production`
       break
-    default:
+    case 'development':
       path = `${__dirname}/.env.development`
   }
-  dotenv.config({ path: path })
+  const result = config({ path })
+  if (result.error) {
+    throw new Error("Please define NODE_ENV system environment variable as 'development', 'test' or 'production'")
+  } else {
+    console.log(`System environment variables loaded from ${path.replace(__dirname, '')}`)
+  }
 }
-
-export const BLOCKCHAIN_API_URL = process.env.BLOCKCHAIN_API_URL

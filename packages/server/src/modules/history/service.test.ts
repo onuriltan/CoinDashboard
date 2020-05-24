@@ -11,13 +11,14 @@ describe('getHistory', () => {
 
   it('should call marketPriceChart and returns response', async () => {
     // Arrange
+    const mockDate = new Date()
     const mockMarketPriceChartReturn: Response = {
       status: 'status',
       name: 'name',
       unit: Fiat.Eur,
       period: 'period',
       description: 'description',
-      values: [{ x: 10, y: 10 }]
+      values: [{ date: mockDate, value: 10 }]
     }
     const mockMarketPriceChart = jest.spyOn(integration, 'marketPriceChart')
     mockMarketPriceChart.mockResolvedValue(mockMarketPriceChartReturn)
@@ -30,6 +31,6 @@ describe('getHistory', () => {
     const history = await getHistory(mockObject, mockArgs, mockObject, mockObject)
 
     // Assert
-    expect(history).toEqual({ fiat: Fiat.Eur, period: 'period', values: [{ x: 10, y: 10 }] })
+    expect(history).toEqual({ fiat: Fiat.Eur, period: 'period', values: [{ date: mockDate, value: 10 }] })
   })
 })

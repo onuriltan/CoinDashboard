@@ -1,29 +1,22 @@
 import React from 'react'
-import { render, cleanup, wait } from '@testing-library/react'
+import { render, cleanup } from '@testing-library/react'
 import { MockedProvider } from '@apollo/react-testing'
-import { App, BOOKS } from './App'
+import { App } from './App'
 
-const mocks = [
-  {
-    request: {
-      query: BOOKS
-    },
-    result: {
-      data: {
-        books: [
-          {
-            title: 'Jurassic Park',
-            author: 'Michael Crichton'
-          }
-        ]
-      }
+jest.mock('@amcharts/amcharts4/core')
+jest.mock('@amcharts/amcharts4/charts')
+jest.mock('../modules/bitcoin-chart/BitcoinChart', () => {
+  return {
+    __esModule: true,
+    // eslint-disable-next-line react/display-name
+    BitcoinChart: () => {
+      return <div/>
     }
   }
-]
-
-const wrappedComponent = (mocks: any) => {
+})
+const wrappedComponent = () => {
   return (
-    <MockedProvider mocks={mocks} addTypename={false}>
+    <MockedProvider addTypename={false}>
       <App />
     </MockedProvider>
   )
@@ -31,14 +24,7 @@ const wrappedComponent = (mocks: any) => {
 
 describe('<App />', function () {
   afterEach(cleanup)
-
-  it('renders learn react link', async () => {
-    // Arrange & Act
-    const { getByTestId } = render(wrappedComponent(mocks))
-    await wait() // wait for mock graphQL response
-    const book = getByTestId('Jurassic Park: Michael Crichton')
-
-    // Assert
-    expect(book).toBeInTheDocument()
+  it('should render without crashing', async () => {
+    render(wrappedComponent())
   })
 })
