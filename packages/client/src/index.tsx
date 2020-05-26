@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker'
 import { App } from './app/App'
 import * as am4core from '@amcharts/amcharts4/core'
 import am4themesAnimated from '@amcharts/amcharts4/themes/animated'
-import './index.css'
+import './index.scss'
 
 am4core.useTheme(am4themesAnimated)
 
