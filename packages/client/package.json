@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "@coindashboard/client",
   "version": "0.1.0",
   "description": "Coin Dashboard Client",
   "author": "onuriltan <onur.iltan@gmail.com>",

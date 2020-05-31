@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "@coindashboard/server",
   "version": "0.0.0",
   "description": "Coin Dashboard Server",
   "author": "onuriltan <onur.iltan@gmail.com>",
