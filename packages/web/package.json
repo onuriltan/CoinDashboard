@@ -1,7 +1,7 @@
 {
-  "name": "@coindashboard/client",
+  "name": "@coindashboard/web",
   "version": "0.1.0",
-  "description": "Coin Dashboard Client",
+  "description": "Coin Dashboard Web",
   "author": "onuriltan <onur.iltan@gmail.com>",
   "license": "MIT",
   "main": "src/index.tsx",

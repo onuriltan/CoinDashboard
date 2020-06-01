@@ -17,5 +17,6 @@ export const schema = gql`
   }
   type Query {
     history(timeSpan: String!): History!
+    ping(): String!
   }
 `

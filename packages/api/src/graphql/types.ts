@@ -9,7 +9,6 @@ export type Scalars = {
   Date: any;
 };
 
-
 export enum Fiat {
   Usd = 'USD',
   Eur = 'EUR'
@@ -33,8 +32,6 @@ export type Query = {
   history: History;
 };
 
-
 export type QueryHistoryArgs = {
   timeSpan: Scalars['String'];
 };
-

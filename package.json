@@ -6,12 +6,12 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "dev:server": "lerna run --scope @coindashboard/server dev",
-    "dev:client": "lerna run --scope @coindashboard/client dev",
-    "test:server": "lerna run --scope @coindashboard/server test:ci",
-    "test:client": "lerna run --scope @coindashboard/client test:ci",
-    "build:server": "lerna run --scope @coindashboard/server build",
-    "build:client": "lerna run --scope @coindashboard/client build",
+    "dev:api": "lerna run --scope @coindashboard/api dev",
+    "dev:web": "lerna run --scope @coindashboard/web dev",
+    "test:api": "lerna run --scope @coindashboard/api test:ci",
+    "test:web": "lerna run --scope @coindashboard/web test:ci",
+    "build:api": "lerna run --scope @coindashboard/api build",
+    "build:web": "lerna run --scope @coindashboard/web build",
     "build:all": "lerna run build",
     "publish": "lerna publish"
   },

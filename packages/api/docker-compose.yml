@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  api:
+    container_name: coindashboard-api
+    build:
+      context: ../../
+      dockerfile: ./packages/api/Dockerfile
+    ports:
+      - 4000:4000

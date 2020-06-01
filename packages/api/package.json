@@ -1,7 +1,7 @@
 {
-  "name": "@coindashboard/server",
+  "name": "@coindashboard/api",
   "version": "0.0.0",
-  "description": "Coin Dashboard Server",
+  "description": "Coin Dashboard API",
   "author": "onuriltan <onur.iltan@gmail.com>",
   "homepage": "https://github.com/onuriltan/CoinDashboard#readme",
   "license": "MIT",
